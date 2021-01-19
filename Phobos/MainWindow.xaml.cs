@@ -69,11 +69,21 @@ namespace Phobos
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
-            int rows = mas.GetUpperBound(0) + 1;
-            int columns = mas.Length / rows;
-            for (int st = 0; st < rows; st++) ;
-
+                   int rows = mas.GetUpperBound(0) + 1;
+            int columns = mas.GetUpperBound(1) + 1;
+            int temp;
+            for (int i = 0; i < mas.Length - 1; i++)
+            {
+                for (int j = i + 1; j < mas.Length; j++)
+                {
+                    if (nums[i] > nums[j])
+                    {
+                        temp = nums[i];
+                        nums[i] = nums[j];
+                        nums[j] = temp;
+                    }
+                }
+            }
         }
     }
 }
